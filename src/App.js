@@ -23,7 +23,7 @@ const Content = (props) => {
 }
 
 const Part = (props) => {
-  console.log(props.part)
+  //console.log(props.part)
   return (
     <p>
       {props.part.name} {props.part.exercises}
@@ -52,8 +52,10 @@ const Hello = ({name, age})=>{
   )
 }
 
-const App = () => {
+const App = (props) => {
 
+  const {counter} = props
+  //console.log({counter}, 10);
   const course = {
     name: 'Half Stack application development',
     parts: [
@@ -76,6 +78,7 @@ const App = () => {
 
   return (
     <>
+    <div>{counter}</div>
     <div>
       <Header course = {course} />
       <Content parts={course.parts}/>
