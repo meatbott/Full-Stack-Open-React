@@ -2,7 +2,58 @@
 import React, { useState} from 'react'
 
 
-const Header = (props) =>{
+
+
+const App = () => {
+  const [clicks, setClicks]=useState({
+    left: 0,
+    right: 0
+  })
+  const handleLeftClick=()=>
+    setClicks({...clicks, left: clicks.left+1})
+
+  const handleRightClick=()=>
+    setClicks({...clicks, right: clicks.right+1})
+
+return(
+  <div>
+    {clicks.left}
+    <button onClick={handleLeftClick}>
+      Left
+    </button>
+    <button onClick={handleRightClick}>
+      Right
+    </button>
+    {clicks.right}
+  </div>
+)
+
+}
+
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const Header = (props) =>{
   return (
 
     <h1>
@@ -58,70 +109,64 @@ const Button = ({onClick, text}) => (
   <button onClick={onClick}>
     {text}
   </button>
-)
+)*/
+/*const [ counter, setCounter] = useState(0)
 
-const App = () => {
-
-  const [ counter, setCounter] = useState(0)
-
-  const increment = ()=>{
-    setCounter(counter+1)
-  }
-
-  const decrement = ()=>{
-    setCounter(counter-1)
-  }
-
-  const reset = ()=>{
-    setCounter(0)
-  }
-
-  const course = {
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7
-      },
-      {
-        name: 'State of a component',
-        exercises: 14
-      }]
-  }
-
-  const name = 'Peter';
-  const age = 10;
-
-  return (
-    <>
-    <Display  counter={counter}/>
-    <Button
-      onClick={increment}
-      text="Increment"/>
-    <Button
-      onClick={decrement}
-      text="Decrement"/>
-    <Button
-      onClick={reset}
-      text="Reset"/>
-
-    <div>
-      <Header course = {course} />
-      <Content parts={course.parts}/>
-      <Total total = {course.parts} />
-    </div>
-
-    <div>
-       <h1>Greetings</h1>
-       <Hello name="Maya" age={26+10}/>
-       <Hello name={name} age={age}/>
-    </div>
-    </>
-  )
+const increment = ()=>{
+  setCounter(counter+1)
 }
 
-export default App
+const decrement = ()=>{
+  setCounter(counter-1)
+}
+
+const reset = ()=>{
+  setCounter(0)
+}
+
+const course = {
+  name: 'Half Stack application development',
+  parts: [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }]
+}
+
+const name = 'Peter';
+const age = 10;
+
+return (
+  <>
+  <Display  counter={counter}/>
+  <Button
+    onClick={increment}
+    text="Increment"/>
+  <Button
+    onClick={decrement}
+    text="Decrement"/>
+  <Button
+    onClick={reset}
+    text="Reset"/>
+
+  <div>
+    <Header course = {course} />
+    <Content parts={course.parts}/>
+    <Total total = {course.parts} />
+  </div>
+
+  <div>
+     <h1>Greetings</h1>
+     <Hello name="Maya" age={26+10}/>
+     <Hello name={name} age={age}/>
+  </div>
+  </>
+)*/
